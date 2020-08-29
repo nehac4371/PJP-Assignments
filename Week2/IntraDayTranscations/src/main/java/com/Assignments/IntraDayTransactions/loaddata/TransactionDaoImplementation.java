@@ -2,7 +2,9 @@ package com.Assignments.IntraDayTransactions.loaddata;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.Assignments.IntraDayTransactions.io.CSVFileReader;
@@ -12,11 +14,11 @@ public class TransactionDaoImplementation implements TransactionDAO {
 
 	private List<TransactionPOJO> data = null;
 
-
 	SampleFileReader sfr = null;
 
 	public TransactionDaoImplementation() throws Exception {
 		data = new ArrayList<TransactionPOJO>();
+
 		sfr = new CSVFileReader("Sample_Data_Fee_Calculator.csv");
 	}
 
@@ -26,15 +28,18 @@ public class TransactionDaoImplementation implements TransactionDAO {
 		data.add(newTranscation);
 
 	}
-	
+
 	public List<TransactionPOJO> getData() throws Exception {
-		
+
 		String[] element = sfr.retrieveElement();
-		while(element!=null) {
+
+		while (element != null) {
 			data.add(new TransactionPOJO(element));
+
 			element = sfr.retrieveElement();
+
 		}
-		
+
 		return data;
 	}
 
@@ -63,14 +68,13 @@ public class TransactionDaoImplementation implements TransactionDAO {
 
 	@Override
 	public List<TransactionPOJO> retrieveForIntraDayFee(String clientId, String securityId, Date transcationDate) {
-		
-		List<TransactionPOJO> intraDayData = data.stream()
-				.filter(obj -> clientId.equals(obj.getClientId()))
+
+		List<TransactionPOJO> intraDayData = data.stream().filter(obj -> clientId.equals(obj.getClientId()))
 				.filter(obj -> securityId.equals(obj.getSecurityId()))
 				.filter(obj -> transcationDate.equals(obj.getTransactionDate()))
 				.filter(obj -> ("BUY".equals(obj.getTransactionType()) || "SELL".equals(obj.getTransactionType())))
 				.collect(Collectors.toList());
-		
+
 		return intraDayData;
 	}
 
