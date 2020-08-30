@@ -1,0 +1,22 @@
+City,Gender,Average Income(in USD)
+New Delhi,F,113433.0
+New Delhi,M,241045.0
+Hong kong,F,181953.0
+Hong kong,M,256950.0
+Hyderabad,F,137448.0
+Bangalore,F,159180.0
+Chennai,F,172164.0
+Mumbai,F,207216.0
+Bangalore,M,222720.0
+Mumbai,M,233472.0
+Hyderabad,M,268560.0
+Singapore,F,60343.0
+Singapore,M,76860.0
+London,F,20446.0
+London,M,27531.0
+Houston,F,46879.0
+Boston,F,49430.0
+New York,F,64971.0
+Houston,M,59994.0
+Boston,M,64070.0
+New York,M,75629.0

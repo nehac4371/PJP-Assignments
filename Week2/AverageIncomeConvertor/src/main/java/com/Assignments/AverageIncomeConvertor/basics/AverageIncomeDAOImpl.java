@@ -3,8 +3,8 @@ package com.Assignments.AverageIncomeConvertor.basics;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.Assignments.AverageIncomeConvertor.readers.CSVFileReader;
-import com.Assignments.AverageIncomeConvertor.readers.SampleFileReader;
+import com.Assignments.AverageIncomeConvertor.io.CSVFileReader;
+import com.Assignments.AverageIncomeConvertor.io.SampleFileReader;
 
 public class AverageIncomeDAOImpl implements AverageIncomeDAO{
 	
@@ -30,7 +30,6 @@ public class AverageIncomeDAOImpl implements AverageIncomeDAO{
 	
 	@Override
 	public List<AverageIncomePOJO> getAllData() {
-		// TODO Auto-generated method stub
 		return data;
 	}
 

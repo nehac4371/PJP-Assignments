@@ -6,7 +6,7 @@ public class AverageIncomePOJO {
 	private String Country;
 	private String Gender;
 	private String Currency;
-	private String AverageIncome;
+	private Double AverageIncome;
 
 	public AverageIncomePOJO(String city, String country, String gender, String currency, String averageIncome) {
 		super();
@@ -14,7 +14,7 @@ public class AverageIncomePOJO {
 		Country = country;
 		Gender = gender;
 		Currency = currency;
-		AverageIncome = averageIncome;
+		AverageIncome = Double.parseDouble(averageIncome);
 	}
 
 	public AverageIncomePOJO(String[] element) {
@@ -23,7 +23,7 @@ public class AverageIncomePOJO {
 		Country = element[1];
 		Gender = element[2];
 		Currency = element[3];
-		AverageIncome = element[4];
+		AverageIncome = Double.parseDouble(element[4]);
 	}
 
 	public String getCity() {
@@ -58,17 +58,15 @@ public class AverageIncomePOJO {
 		Currency = currency;
 	}
 
-	public String getAverageIncome() {
+	public Double getAverageIncome() {
 		return AverageIncome;
 	}
 
-	public void setAverageIncome(String averageIncome) {
+	public void setAverageIncome(Double averageIncome) {
 		AverageIncome = averageIncome;
 	}
 
-	public Float aveargeIncomeFloat() {
-		return Float.parseFloat(AverageIncome);
-	}
+
 
 	@Override
 	public String toString() {
